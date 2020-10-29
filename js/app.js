@@ -83,7 +83,21 @@ function showTotalas() {
   document.querySelector(".item-total").textContent = finalMoney;
   document.getElementById("item-count").textContent = total.length;
 
-  console.log(finalMoney);
 }
 
+//Clear cart
+document.getElementById("clear-cart").addEventListener("click", function() {
+  var l = parseInt(document.getElementsByClassName("cart-item").length )-1;
+  while(l >= 0){
+    document.getElementsByClassName("cart-item")[l].remove();
+    l--;
+  }
+  document.getElementById("cart-total").textContent = 0;
+  document.querySelector(".item-total").textContent = 0;
+  document.getElementById("item-count").textContent = 0;
+});
 
+//Remove single item
+document.getElementById("cart-item-remove").addEventListener("click",function(){
+  // document.getElementById("cart-item")[0].remove();
+});
